@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Szemul\DependencyValidator\Validator;
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
+
+$workingDirectoryPath = getcwd();
+
+$unRequiredClasses = (new Validator($workingDirectoryPath))->getUnRequiredClasses();
+
+if (empty($unRequiredClasses)) {
+    $exitCode = 0;
+} else {
+    echo 'Classes from un-required packages are imported:' . PHP_EOL;
+    foreach ($unRequiredClasses as $class) {
+        echo ' - ' . $class . PHP_EOL;
+    }
+    $exitCode = 1;
+}
+
+exit($exitCode);

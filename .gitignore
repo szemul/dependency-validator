@@ -1,0 +1,12 @@
+/.settings
+/.project
+/.buildpath
+/.idea
+/.php_cs.cache
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/.autocomplete.txt
+vendor
+composer.phar
+.DS_Store
+coverage.*

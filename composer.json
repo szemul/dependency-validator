@@ -1,0 +1,25 @@
+{
+    "name": "szemul/dependency-validator",
+    "description": "Validates the composer dependencies of the given project",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Szemul\\DependencyValidator\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1"
+    },
+    "bin": [
+        "bin/dependency-validator"
+    ],
+    "config": {
+        "platform": {
+            "php": "8.1.0"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
